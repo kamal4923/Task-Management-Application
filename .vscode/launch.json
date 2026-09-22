@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Express Server",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/server/index.js",
+      "cwd": "${workspaceFolder}/server"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Client Browser",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/client"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack (Server + Client)",
+      "configurations": ["Launch Express Server", "Launch Client Browser"]
+    }
+  ]
+}
